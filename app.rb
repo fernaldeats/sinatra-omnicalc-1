@@ -39,7 +39,7 @@ get("/payment/new") do
 end
 
 get("/payment/results") do
-  @the_apr = params.fetch("user_apr").to_f
+  @the_apr = params.fetch("user_apr").to_f.round(4)
   @the_r = @the_apr / 12 / 100
   @the_year = params.fetch("user_years").to_i
   @the_n = @the_year * 12
